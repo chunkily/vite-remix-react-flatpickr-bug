@@ -1,36 +1,14 @@
-# Welcome to Remix + Vite!
+# react-flatpickr bug demo
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/guides/vite) for details on supported features.
+This repo is meant to reproduce a bug where react-flatpickr does not work in a
+Remix application using vite.
 
-## Development
+1. Install dependencies with `npm ci`
+2. Run the project with `npm run dev`
 
-Run the Vite dev server:
+## Steps to reproduce
 
-```shellscript
-npm run dev
-```
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+1. Create a new vite powered Remix application using `npx create-remix@2.9.1`
+2. Install `react-flatpickr` and use the component in a new route.
+3. Observe that an error is thrown when the component is rendered with
+   server-side rendering but is fine with client-side rendering.
